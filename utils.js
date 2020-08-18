@@ -11,7 +11,7 @@ function build(pkg) {
 		return [];
 	}
 
-	return () => 'npm run build'; // needs to be function to ignore filenames
+	return ['npm run build'];
 }
 
 function eslint(pkg) {

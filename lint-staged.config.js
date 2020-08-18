@@ -19,5 +19,5 @@ module.exports = {
 	'*.{png,jpeg,jpg,gif,svg}': [
 		'imagemin-lint-staged',
 	],
-	'*': build(pkg),
+	'*': () => build(pkg), // needs to be function to ignore filenames
 };
