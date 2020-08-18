@@ -1,7 +1,3 @@
-function fix(cmds) {
-	return cmds.map((cmd) => `${cmd} --fix`);
-}
-
 function packagePath(name) {
 	return require.resolve(name)
 		.replace(
@@ -15,7 +11,7 @@ function build(pkg) {
 		return [];
 	}
 
-	return () => 'npm run build';
+	return () => 'npm run build'; // needs to be function to ignore filenames
 }
 
 function eslint(pkg) {
@@ -46,7 +42,6 @@ function stylelintSCSS(pkg) {
 module.exports = {
 	build,
 	eslint,
-	fix,
 	packagePath,
 	stylelint,
 	stylelintSCSS,

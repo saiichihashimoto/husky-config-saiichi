@@ -1,14 +1,14 @@
 const path = require('path');
 
-const { build, eslint, fix, stylelint, stylelintSCSS } = require('./utils');
+const { build, eslint, stylelint, stylelintSCSS } = require('./utils');
 
 // eslint-disable-next-line import/no-dynamic-require
 const pkg = require(path.join(process.cwd(), 'package.json'));
 
 module.exports = {
-	'*.{js,ts,tsx}':   fix(eslint(pkg)),
-	'*.css':           fix(stylelint(pkg)),
-	'*.scss':          fix(stylelintSCSS(pkg)),
+	'*.{js,ts,tsx}':   eslint(pkg).map((cmd) => `${cmd} --fix`),
+	'*.css':           stylelint(pkg).map((cmd) => `${cmd} --fix`),
+	'*.scss':          stylelintSCSS(pkg).map((cmd) => `${cmd} --fix`),
 	'**/package.json': [
 		'sort-package-json',
 	],
@@ -19,5 +19,5 @@ module.exports = {
 	'*.{png,jpeg,jpg,gif,svg}': [
 		'imagemin-lint-staged',
 	],
-	'*': build(pkg), // needs to be function to ignore filenames
+	'*': build(pkg),
 };

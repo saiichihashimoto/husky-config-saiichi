@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/saiichihashimoto/husky-config-saiichihashimoto.git"
   },
-  "main": ".husky.js",
+  "main": ".huskyrc.js",
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
@@ -24,6 +24,7 @@
     "jsonlint": "1.6.3",
     "lint-prepush": "2.1.0",
     "lint-staged": "10.2.11",
+    "pkg-ok": "2.3.1",
     "sort-package-json": "1.44.0"
   },
   "devDependencies": {
