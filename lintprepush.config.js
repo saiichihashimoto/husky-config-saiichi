@@ -1,6 +1,6 @@
 const path = require('path');
 
-const { build, eslint, stylelint, stylelintSCSS } = require('./utils');
+const { eslint, stylelint, stylelintSCSS } = require('./utils');
 
 // eslint-disable-next-line import/no-dynamic-require
 const pkg = require(path.join(process.cwd(), 'package.json'));
@@ -13,6 +13,11 @@ module.exports = {
 		'**/package.json': [
 			'pkg-ok',
 		],
-		'*': build(pkg),
+
+		/*
+		 * TODO Build on prepush
+		 * BODY The filenames get attached as args, no real way to do this
+		 * '*': build(pkg),
+		 */
 	},
 };
