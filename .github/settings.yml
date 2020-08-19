@@ -2,5 +2,9 @@ _extends: .github
 branches:
   - name: master
     protection:
+      required_pull_request_reviews: null
       required_status_checks:
-        contexts: ['Semantic Pull Request', 'Travis CI - Pull Request']
+        strict: true
+        contexts: ['Semantic Pull Request']
+      enforce_admins: true
+      restrictions: null
