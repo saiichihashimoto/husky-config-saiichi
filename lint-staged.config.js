@@ -22,4 +22,7 @@ module.exports = {
 	'**/package.json': [
 		'sort-package-json',
 	],
+	'**/.travis.yml': [
+		'travis lint',
+	],
 };

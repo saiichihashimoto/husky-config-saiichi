@@ -13,6 +13,9 @@ module.exports = {
 		'**/package.json': [
 			'pkg-ok',
 		],
+		'**/.travis.yml': [
+			'travis lint',
+		],
 
 		/*
 		 * TODO Build on prepush
