@@ -5,6 +5,6 @@ branches:
       required_pull_request_reviews: null
       required_status_checks:
         strict: true
-        contexts: ['Semantic Pull Request']
+        contexts: ['Semantic Pull Request', 'Travis CI - Branch']
       enforce_admins: true
       restrictions: null
