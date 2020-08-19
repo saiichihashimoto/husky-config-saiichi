@@ -14,6 +14,14 @@ function build(pkg) {
 	return ['npm run build'];
 }
 
+function test(pkg) {
+	if (!pkg.scripts || !pkg.scripts.test) {
+		return [];
+	}
+
+	return ['npm test'];
+}
+
 function eslint(pkg) {
 	if (!pkg.eslintConfig || !pkg.eslintConfig.extends) {
 		return [];
@@ -45,4 +53,5 @@ module.exports = {
 	packagePath,
 	stylelint,
 	stylelintSCSS,
+	test,
 };
