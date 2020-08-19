@@ -16,8 +16,8 @@ module.exports = {
 		'imagemin-lint-staged',
 	],
 	'**/!(package|package-lock).json': [
-		'fixjson --write',
-		'jsonlint --quiet',
+		'fixjson --write ',
+		'jsonlint --in-place --quiet',
 	],
 	'**/package.json': [
 		'sort-package-json',
