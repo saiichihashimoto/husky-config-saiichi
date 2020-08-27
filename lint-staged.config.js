@@ -1,14 +1,12 @@
 const path = require('path');
 
-const { build, eslint, stylelint, stylelintSCSS, test } = require('./utils');
+const { eslint, stylelint, stylelintSCSS, test } = require('./utils');
 
-// eslint-disable-next-line import/no-dynamic-require
+// eslint-disable-next-line import/no-dynamic-require -- Need to use the user's package.json, not mine
 const pkg = require(path.join(process.cwd(), 'package.json'));
 
 module.exports = {
-	'*': () => [] // needs to be function to ignore filenames
-		.concat(test(pkg))
-		.concat(build(pkg)),
+	'*':                        () => test(pkg), // needs to be function to ignore filenames
 	'*.{js,ts,tsx}':            eslint(pkg).map((cmd) => `${cmd} --fix`),
 	'*.css':                    stylelint(pkg).map((cmd) => `${cmd} --fix`),
 	'*.scss':                   stylelintSCSS(pkg).map((cmd) => `${cmd} --fix`),

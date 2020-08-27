@@ -2,7 +2,7 @@ const path = require('path');
 
 const { eslint, stylelint, stylelintSCSS } = require('./utils');
 
-// eslint-disable-next-line import/no-dynamic-require
+// eslint-disable-next-line import/no-dynamic-require -- Need to use the user's package.json, not mine
 const pkg = require(path.join(process.cwd(), 'package.json'));
 
 module.exports = {
@@ -21,9 +21,9 @@ module.exports = {
 		],
 
 		/*
-		 * TODO Build on prepush
+		 * TODO Test on prepush
 		 * BODY The filenames get attached as args, no real way to do this
-		 * '*': build(pkg),
+		 * '*': test(pkg),
 		 */
 	},
 };
