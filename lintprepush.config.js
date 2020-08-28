@@ -23,7 +23,9 @@ module.exports = {
 		/*
 		 * TODO Test on prepush
 		 * BODY The filenames get attached as args, no real way to do this
-		 * '*': test(pkg),
+		 * '*': []
+		 *     .concat(test(pkg))
+		 *     .concat(build(pkg)),
 		 */
 	},
 };
