@@ -6,6 +6,14 @@ function packagePath(name) {
 		);
 }
 
+function build(pkg) {
+	if (!pkg.scripts || !pkg.scripts.build) {
+		return [];
+	}
+
+	return ['npm run build'];
+}
+
 function test(pkg) {
 	if (!pkg.scripts || !pkg.scripts.test) {
 		return [];
@@ -40,6 +48,7 @@ function stylelintSCSS(pkg) {
 }
 
 module.exports = {
+	build,
 	eslint,
 	packagePath,
 	stylelint,
