@@ -10,15 +10,9 @@ module.exports = {
 		'*.{js,ts,tsx}':                   eslint(pkg),
 		'*.css':                           stylelint(pkg),
 		'*.scss':                          stylelintSCSS(pkg),
-		'**/!(package|package-lock).json': [
-			'jsonlint --quiet',
-		],
-		'**/package.json': [
-			'pkg-ok',
-		],
-		'**/.travis.yml': [
-			'travis lint',
-		],
+		'**/!(package|package-lock).json': ['jsonlint --quiet'],
+		'**/package.json':                 ['pkg-ok'],
+		'**/.travis.yml':                  ['travis lint'],
 
 		/*
 		 * TODO Test on prepush

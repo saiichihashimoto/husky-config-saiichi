@@ -7,40 +7,27 @@ function packagePath(name) {
 }
 
 function build(pkg) {
-	if (!pkg.scripts || !pkg.scripts.build) {
-		return [];
-	}
-
-	return ['npm run build'];
+	return !pkg.scripts || !pkg.scripts.build
+		? []
+		: ['npm run build'];
 }
 
 function test(pkg) {
-	if (!pkg.scripts || !pkg.scripts.test) {
-		return [];
-	}
-
-	return ['npm test'];
+	return !pkg.scripts || !pkg.scripts.test
+		? []
+		: ['npm test'];
 }
 
 function eslint(pkg) {
-	if (!pkg.eslintConfig || !pkg.eslintConfig.extends) {
-		return [];
-	}
-	const configPath = packagePath(`eslint-config-${pkg.eslintConfig.extends}`);
-
-	return [
-		`eslint --resolve-plugins-relative-to ${configPath} --ignore-pattern '!.*' --color --report-unused-disable-directives`,
-	];
+	return !pkg.eslintConfig || !pkg.eslintConfig.extends
+		? []
+		: [`eslint --resolve-plugins-relative-to ${packagePath(`eslint-config-${pkg.eslintConfig.extends}`)} --ignore-pattern '!.*' --color --report-unused-disable-directives`];
 }
 
 function stylelint(pkg) {
-	if (!pkg.stylelint || !pkg.stylelint.extends) {
-		return [];
-	}
-
-	return [
-		'stylelint --color --allow-empty-input --report-needless-disables',
-	];
+	return !pkg.stylelint || !pkg.stylelint.extends
+		? []
+		: ['stylelint --color --allow-empty-input --report-needless-disables'];
 }
 
 function stylelintSCSS(pkg) {
