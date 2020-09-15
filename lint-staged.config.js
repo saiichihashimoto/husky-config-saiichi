@@ -9,7 +9,7 @@ module.exports = {
 	'*': () => [] // needs to be function to ignore filenames
 		.concat(test(pkg))
 		.concat(build(pkg)),
-	'*.{js,ts,tsx}':                   eslint(pkg).map((cmd) => `${cmd} --fix`),
+	'*.{js,jsx,ts,tsx}':               eslint(pkg).map((cmd) => `${cmd} --fix`),
 	'*.css':                           stylelint(pkg).map((cmd) => `${cmd} --fix`),
 	'*.scss':                          stylelintSCSS(pkg).map((cmd) => `${cmd} --fix`),
 	'*.{png,jpeg,jpg,gif,svg}':        ['imagemin-lint-staged'],
