@@ -9,20 +9,14 @@ module.exports = {
 	'*': () => [] // needs to be function to ignore filenames
 		.concat(test(pkg))
 		.concat(build(pkg)),
-	'*.{js,ts,tsx}':            eslint(pkg).map((cmd) => `${cmd} --fix`),
-	'*.css':                    stylelint(pkg).map((cmd) => `${cmd} --fix`),
-	'*.scss':                   stylelintSCSS(pkg).map((cmd) => `${cmd} --fix`),
-	'*.{png,jpeg,jpg,gif,svg}': [
-		'imagemin-lint-staged',
-	],
+	'*.{js,jsx,ts,tsx}':               eslint(pkg).map((cmd) => `${cmd} --fix`),
+	'*.css':                           stylelint(pkg).map((cmd) => `${cmd} --fix`),
+	'*.scss':                          stylelintSCSS(pkg).map((cmd) => `${cmd} --fix`),
+	'*.{png,jpeg,jpg,gif,svg}':        ['imagemin-lint-staged'],
 	'**/!(package|package-lock).json': [
 		'fixjson --write ',
 		'jsonlint --in-place --quiet',
 	],
-	'**/package.json': [
-		'sort-package-json',
-	],
-	'**/.travis.yml': [
-		'travis lint',
-	],
+	'**/package.json': ['sort-package-json'],
+	'**/.travis.yml':  ['travis lint'],
 };

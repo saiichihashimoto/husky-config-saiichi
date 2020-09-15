@@ -7,18 +7,12 @@ const pkg = require(path.join(process.cwd(), 'package.json'));
 
 module.exports = {
 	tasks: {
-		'*.{js,ts,tsx}':                   eslint(pkg),
+		'*.{js,jsx,ts,tsx}':               eslint(pkg),
 		'*.css':                           stylelint(pkg),
 		'*.scss':                          stylelintSCSS(pkg),
-		'**/!(package|package-lock).json': [
-			'jsonlint --quiet',
-		],
-		'**/package.json': [
-			'pkg-ok',
-		],
-		'**/.travis.yml': [
-			'travis lint',
-		],
+		'**/!(package|package-lock).json': ['jsonlint --quiet'],
+		'**/package.json':                 ['pkg-ok'],
+		'**/.travis.yml':                  ['travis lint'],
 
 		/*
 		 * TODO Test on prepush
