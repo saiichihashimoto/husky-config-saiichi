@@ -17,6 +17,9 @@ module.exports = {
 		'fixjson --write ',
 		'jsonlint --in-place --quiet',
 	],
-	'**/package.json': ['sort-package-json'],
-	'**/.travis.yml':  ['travis lint'],
+	'**/package.json': [
+		'sort-package-json',
+		'pkg-ok',
+	],
+	'**/.travis.yml': ['travis lint'],
 };
