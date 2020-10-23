@@ -28,7 +28,7 @@
     "lint-prepush": "2.1.0",
     "lint-staged": "10.4.2",
     "pkg-ok": "2.3.1",
-    "sort-package-json": "1.46.0"
+    "sort-package-json": "1.46.1"
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.3.0",
