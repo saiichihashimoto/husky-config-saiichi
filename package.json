@@ -33,7 +33,7 @@
   "devDependencies": {
     "cz-conventional-changelog": "3.3.0",
     "eslint-config-saiichihashimoto": "2.12.3",
-    "husky": "4.3.0"
+    "husky": "4.3.5"
   },
   "engines": {
     "node": "12.8.0"
