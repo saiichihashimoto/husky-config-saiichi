@@ -27,7 +27,7 @@
     "jsonlint": "1.6.3",
     "lint-staged": "10.5.3",
     "pkg-ok": "2.3.1",
-    "sort-package-json": "1.48.0"
+    "sort-package-json": "1.48.1"
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.3.0",
