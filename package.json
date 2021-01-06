@@ -22,7 +22,7 @@
     "extends": "saiichihashimoto"
   },
   "dependencies": {
-    "fixjson": "1.1.1",
+    "fixjson": "1.1.2",
     "imagemin-lint-staged": "0.4.0",
     "jsonlint": "1.6.3",
     "lint-staged": "10.5.3",
