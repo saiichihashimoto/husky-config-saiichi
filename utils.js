@@ -27,7 +27,7 @@ function eslint(pkg) {
 function stylelint(pkg) {
 	return !pkg.stylelint || !pkg.stylelint.extends
 		? []
-		: ['stylelint --color --allow-empty-input --report-needless-disables'];
+		: ['stylelint --color --allow-empty-input'];
 }
 
 function stylelintSCSS(pkg) {
